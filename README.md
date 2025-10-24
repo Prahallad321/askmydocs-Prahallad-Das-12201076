@@ -5,10 +5,8 @@
 AskMyDocs is an AI-driven web application that allows users to upload PDF documents and interact with them through natural language queries.  
 It extracts, indexes, and retrieves content from your files using a RAG pipeline powered by Flask, LangChain, FAISS, and GPT-based models.
 
-🚀 Built for the CloudCosmos Hackathon 2025
 
 # Project Structure
-
 askmydocs/
 ├── app.py                   # Flask entry point
 ├── requirements.txt         # Dependencies
