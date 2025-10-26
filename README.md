@@ -106,7 +106,7 @@ streamlit run app.py
 ---
 
 <h1>Demo Video</h1>
-**YouTube Demo URL:**
+**YouTube Demo URL:** https://youtu.be/aVn44gjAbcg
 
 ---
 
