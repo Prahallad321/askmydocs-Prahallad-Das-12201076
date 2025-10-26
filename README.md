@@ -1,17 +1,23 @@
 
 <h1>Project Overview</h1>
 
-This project is a **Multi-Modal PDF Question Answering Application** built with **Streamlit**. It allows users to upload PDFs, extract text and images, and ask questions about the content. The system leverages **llama3.2** and **llama3.2-vision**, a multimodal model capable of understanding both text and images, to provide concise and context-aware answers.  
+This project is a **Multi-Modal PDF Question Answering Application** built with **Streamlit**.  
+It allows users to upload PDFs, extract both text and images, and ask questions about the content.  
+The system leverages **Llama 3.2** and **Llama 3.2-Vision**, multimodal large language models capable of understanding both textual and visual information, to provide concise and context-aware answers.  
 
-The project demonstrates the use of **multimodal LLMs** to combine textual and visual information, enabling robust document understanding for research, reports, or any PDF-based knowledge source.
+The project demonstrates the integration of **LangChain** and **Retrieval-Augmented Generation (RAG)** for intelligent document analysis.  
+By combining **vector-based retrieval** and **multimodal LLM reasoning**, the app can understand complex documents containing text, tables, and images — making it ideal for research papers, reports, and knowledge-heavy PDFs.
 
-The workflow includes:
+---
 
-- **PDF Upload:** Users can upload any PDF document through the web interface.
-- **Content Extraction:** Text, tables, and images are extracted from the PDF. Images are analyzed using the llama3.2-vision model to generate descriptive text.
-- **Text Chunking & Indexing:** Extracted content is split into smaller chunks and converted into vector embeddings for efficient similarity search.
-- **Question Answering:** Users can enter questions about the PDF content. The system retrieves relevant chunks and generates answers using the multimodal model.
-- **Concise Responses:** Answers are limited to three sentences, ensuring they are clear and focused.
+### Workflow Overview
+
+- **PDF Upload:** Users can upload any PDF document through the Streamlit web interface.  
+- **Content Extraction:** Text, tables, and images are extracted using the **Unstructured** library. Images are analyzed with **Llama 3.2-Vision** to generate descriptive text.  
+- **Text Chunking & Indexing:** Extracted content is split into smaller chunks and converted into **vector embeddings** using **LangChain**, enabling efficient similarity search.  
+- **Retrieval-Augmented Generation (RAG):** When a user asks a question, the system retrieves the most relevant chunks and uses **Llama 3.2** to generate a concise answer based on both text and image context.  
+- **Concise Responses:** All answers are limited to three sentences to keep them clear, relevant, and focused.
+
 
 ---
 
@@ -90,17 +96,17 @@ multi-modal-rag/
 
 <h1>Setup Instructions</h1>
 
-# 1. Create a Virtual Environment
+### 1. Create a Virtual Environment
 ```bash
 python -m venv venv
 .\venv\Scripts\activate
 ```
-# 2. Install Dependencies
+### 2. Install Dependencies
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-# 3. Run the Streamlit Application
+### 3. Run the Streamlit Application
 ```bash
 streamlit run app.py
 ```
@@ -134,34 +140,36 @@ The system is designed as a **multimodal PDF question-answering platform** that 
 4. **User Query:** The user submits a question through the chat interface.  
 5. **Retrieval & Answering:** Relevant chunks are retrieved based on similarity, and the multimodal LLM generates a concise, context-aware answer.  
 
+
+
 ### ASCII Diagram
 
 ```text
-[User Uploads PDF]
+User Uploads PDF
           |
           v
-[Extract Text & Images from PDF]
+Extract Text & Images from PDF
           |
           v
-[Describe Images using llama3.2-vision]
+Describe Images using llama3.2-vision
           |
           v
-[Split Text into Chunks & Generate Embeddings]
+Split Text into Chunks & Generate Embeddings
           |
           v
-[Store in InMemoryVectorStore]
+Store in InMemoryVectorStore
           |
           v
-[User Asks Question in Chat Interface]
+User Asks Question in Chat Interface
           |
           v
-[Retrieve Relevant Chunks]
+Retrieve Relevant Chunks
           |
           v
-[Generate Concise Answer with LLM]
+Generate Concise Answer with LLM
           |
           v
-[Display Answer to User]
+Display Answer to User
 ```
 
 ---
@@ -191,9 +199,13 @@ The system is designed as a **multimodal PDF question-answering platform** that 
 
 ---
 
-## References
+<h1>Acknowledgment</h1>
 
-This project uses the following open-source resources, libraries, and models:
+I would like to express my sincere gratitude to the open-source community and the developers behind the technologies that made this project possible. This work was built using **Meta AI’s Llama 3.2** and **Llama 3.2-Vision** models, which provide advanced multimodal understanding of both text and images. I would also like to thank the **LangChain** team for their powerful framework that simplifies building Retrieval-Augmented Generation (RAG) systems, and **Streamlit** for enabling an intuitive and interactive web interface. Additionally, tools like **Hugging Face** and **Ollama** played a vital role in seamless model integration and deployment. This project is a result of the collective innovation and collaboration of the AI research and open-source communities.
+
+
+
+<h1>References</h1>
 
 - **Llama 3.2 (Meta AI)**  
   - Overview & Blog: [https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices)  
