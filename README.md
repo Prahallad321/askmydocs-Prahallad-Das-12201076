@@ -24,3 +24,52 @@ Many PDFs contain complex information in both text and images, making it difficu
  <h1>Solution Summary</h1>
 
 This project provides a **multimodal PDF question-answering system** that combines text and image understanding. Users upload PDFs, and the system extracts text, tables, and images. Images are analyzed using the **llama3.2-vision** model to generate descriptive text. All content is split into manageable chunks and converted into embeddings for efficient similarity search. When a user asks a question, the system retrieves relevant chunks and generates a concise answer using the multimodal LLM, ensuring accurate and context-aware responses.
+
+---
+
+<h1>Tech Stack</h1>
+
+This project leverages a combination of **technologies, frameworks, APIs, and tools** for building a multimodal PDF question-answering system.
+
+### Programming Language
+- **Python 3.11**
+
+### Web Framework
+- **Streamlit 1.50.0** – Interactive web application interface.
+
+### Natural Language Processing & LLM
+- **llama3.2** – Text understanding.
+- **llama3.2-vision** – Multimodal model for both text and image processing.
+- **LangChain (langchain-core, langchain-community, langchain-ollama)** – Orchestrates LLM prompts, memory, and vector stores.
+- **Ollama 0.6.0** – API for llama models and embeddings.
+
+### PDF & Document Processing
+- **unstructured 0.18.15** – High-resolution PDF parsing (text, tables, images).
+- **PyPDF2 / pypdf 6.1.3** – Optional PDF parsing support.
+- **pdf2image 1.17.0** – Convert PDF pages to images.
+- **Pillow 11.3.0** – Image processing.
+- **Python-dotenv 1.1.1** – Environment variable management.
+
+### Text Chunking & Embeddings
+- **langchain-text-splitters 1.0.0** – RecursiveCharacterTextSplitter for text chunking.
+- **OllamaEmbeddings** – Converts text chunks into vector embeddings.
+- **InMemoryVectorStore** – Stores embeddings for similarity search.
+
+### Computer Vision & Image Analysis
+- **opencv-python 4.12.0** – Image handling.
+- **google-cloud-vision 3.11.0** – Optional cloud-based image analysis.
+- **pi_heif / pikepdf** – Image and PDF handling.
+
+### ML / Deep Learning
+- **torch 2.9.0** – Backend for LLMs and embeddings.
+- **transformers 4.57.1** – Optional HuggingFace support for LLMs.
+- **timm 1.0.21** – Vision model utilities.
+
+### Utilities & Tools
+- **numpy, pandas, matplotlib, altair** – Data handling and visualization.
+- **rapidfuzz** – Fuzzy matching for text.
+- **watchdog** – File monitoring.
+- **docker (optional)** – Containerization and deployment.
+- **git / GitPython** – Version control.
+
+This tech stack ensures the application can **process PDFs, handle multimodal data, index content efficiently, and answer user queries in real-time**.
