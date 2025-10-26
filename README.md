@@ -141,7 +141,6 @@ The system is designed as a **multimodal PDF question-answering platform** that 
 5. **Retrieval & Answering:** Relevant chunks are retrieved based on similarity, and the multimodal LLM generates a concise, context-aware answer.  
 
 
-
 ### ASCII Diagram
 
 ```text
