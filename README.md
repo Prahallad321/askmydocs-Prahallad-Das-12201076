@@ -140,6 +140,9 @@ The system is designed as a **multimodal PDF question-answering platform** that 
 4. **User Query:** The user submits a question through the chat interface.  
 5. **Retrieval & Answering:** Relevant chunks are retrieved based on similarity, and the multimodal LLM generates a concise, context-aware answer.  
 
+![LangChain](https://raw.githubusercontent.com/Prahallad321/askmydocs-Prahallad-Das-12201076/main/PDF-LangChain%20(1).jpg)
+
+
 
 ### ASCII Diagram
 
