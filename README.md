@@ -29,8 +29,6 @@ This project provides a **multimodal PDF question-answering system** that combin
 
 <h1>Tech Stack</h1>
 
-This project leverages a combination of **technologies, frameworks, APIs, and tools** for building a multimodal PDF question-answering system.
-
 ### Programming Language
 - **Python 3.11**
 
@@ -71,5 +69,185 @@ This project leverages a combination of **technologies, frameworks, APIs, and to
 - **watchdog** – File monitoring.
 - **docker (optional)** – Containerization and deployment.
 - **git / GitPython** – Version control.
+  
+### Cloud
+**Render / AWS**
 
-This tech stack ensures the application can **process PDFs, handle multimodal data, index content efficiently, and answer user queries in real-time**.
+---
+
+<h1>Project Structure</h1>
+
+multi-modal-rag/
+├── app.py                     # Main Streamlit app
+├── pdfs/                      # Uploaded PDFs
+├── figures/                   # Extracted images
+├── requirements.txt           # Python dependencies
+└── README.md                  # Documentation
+
+---
+
+<h1>Setup Instructions</h1>
+
+# 1. Create a Virtual Environment
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+# 2. Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+# 3. Run the Streamlit Application
+```bash
+streamlit run app.py
+```
+
+---
+
+<h1>Demo Video</h1>
+**YouTube Demo URL:**
+
+---
+
+<h1>Features</h1>
+
+- **Multimodal Understanding:** Supports both text and image content from PDFs using **llama3.2-vision**.  
+- **PDF Upload & Processing:** Easily upload PDFs; automatically extracts text, tables, and images.  
+- **Text Chunking & Embeddings:** Splits content into manageable chunks and indexes them for efficient similarity search.  
+- **Context-Aware Q&A:** Retrieves relevant information and generates concise answers to user questions.  
+- **Interactive Web Interface:** Built with **Streamlit**, providing a simple and user-friendly interface.
+
+---
+
+<h1>Technical Architecture</h1>
+
+The system is designed as a **multimodal PDF question-answering platform** that integrates PDF processing, vector embeddings, and a language model capable of handling both text and images.
+
+### How It Works
+
+1. **PDF Upload:** Users upload a PDF through the Streamlit interface.  
+2. **Content Extraction:** Text, tables, and images are extracted. Images are analyzed by the **llama3.2-vision** model to generate descriptive text.  
+3. **Text Chunking & Indexing:** Extracted content is split into chunks and converted into embeddings, stored in an in-memory vector store.  
+4. **User Query:** The user submits a question through the chat interface.  
+5. **Retrieval & Answering:** Relevant chunks are retrieved based on similarity, and the multimodal LLM generates a concise, context-aware answer.  
+
+### ASCII Diagram
+
+```text
+[User Uploads PDF]
+          |
+          v
+[Extract Text & Images from PDF]
+          |
+          v
+[Describe Images using llama3.2-vision]
+          |
+          v
+[Split Text into Chunks & Generate Embeddings]
+          |
+          v
+[Store in InMemoryVectorStore]
+          |
+          v
+[User Asks Question in Chat Interface]
+          |
+          v
+[Retrieve Relevant Chunks]
+          |
+          v
+[Generate Concise Answer with LLM]
+          |
+          v
+[Display Answer to User]
+```
+
+---
+
+ <h1>Testing</h1>
+
+
+### 1. **PDF Upload Validation**
+   - Only allows files with `.pdf` extension.
+   - Checks that the uploaded file is not empty.
+
+### 2. **Content Extraction Verification**
+   - Ensures text, tables, and images are correctly extracted.
+   - Validates that extracted images are processed by the **llama3.2-vision** model.
+
+### 3. **Text Chunking and Embeddings**
+   - Confirms that text is split into chunks of the specified size with proper overlap.
+   - Verifies that each chunk is successfully converted into vector embeddings.
+
+### 4. **Question Answering**
+   - Checks that relevant chunks are retrieved from the vector store based on user queries.
+   - Ensures that the model produces concise answers and handles unknown questions gracefully.
+
+### 5. **Manual Testing**
+   - Upload various sample PDFs containing text, tables, and images.
+   - Enter different types of questions and confirm that the system returns accurate, context-aware responses.
+
+---
+
+## References
+
+This project uses the following open-source resources, libraries, and models:
+
+- **Llama 3.2 (Meta AI)**  
+  - Overview & Blog: [https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices)  
+  - Model Access via Ollama: [https://ollama.com/library/llama3.2](https://ollama.com/library/llama3.2)  
+  - GitHub Repository: [https://github.com/meta-llama/llama3](https://github.com/meta-llama/llama3)
+
+- **LangChain**  
+  - Official Website: [https://www.langchain.com](https://www.langchain.com)  
+  - Python Documentation: [https://python.langchain.com/docs/](https://python.langchain.com/docs/)  
+  - API Reference: [https://python.langchain.com/docs/reference/](https://python.langchain.com/docs/reference/)  
+  - Community GitHub: [https://github.com/hwchase17/langchain](https://github.com/hwchase17/langchain)
+
+- **Unstructured (PDF Parsing)**  
+  - GitHub Repository: [https://github.com/Unstructured-IO/unstructured](https://github.com/Unstructured-IO/unstructured)
+
+- **Streamlit**  
+  - Official Website: [https://streamlit.io](https://streamlit.io)
+
+- **PyPDF / PyPDF2**  
+  - PyPDF2 on PyPI: [https://pypi.org/project/PyPDF2/](https://pypi.org/project/PyPDF2/)  
+  - PyPDF on PyPI: [https://pypi.org/project/pypdf/](https://pypi.org/project/pypdf/)
+
+- **pdf2image**  
+  - PyPI: [https://pypi.org/project/pdf2image/](https://pypi.org/project/pdf2image/)
+
+- **PyTorch / Transformers**  
+  - PyTorch: [https://pytorch.org](https://pytorch.org)  
+  - Hugging Face Transformers: [https://huggingface.co/docs/transformers](https://huggingface.co/docs/transformers)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
