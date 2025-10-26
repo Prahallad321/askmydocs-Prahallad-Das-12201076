@@ -77,12 +77,14 @@ This project provides a **multimodal PDF question-answering system** that combin
 
 <h1>Project Structure</h1>
 
+```bash
 multi-modal-rag/
 ├── app.py                     # Main Streamlit app
 ├── pdfs/                      # Uploaded PDFs
 ├── figures/                   # Extracted images
 ├── requirements.txt           # Python dependencies
 └── README.md                  # Documentation
+```
 
 ---
 
